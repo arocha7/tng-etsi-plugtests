@@ -13,9 +13,9 @@ description: "EANTC Test Automation Tool VNF - https://wiki.plugtests.net/NFV-PL
 ##
 virtual_deployment_units:
   - id: "vdu01"
-    vm_image: "http://172.22.1.1/NFVPLU3/VNFs/EANTC/EANTC-TestVNF.vmdk"
+    vm_image: "http://172.22.1.1/NFVPLU3/VNFs/EANTC/EANTC-TESTVNF_v3.vmdk"
     vm_image_format: "vmdk"
-    vm_image_md5: '05132ee9bc28e4b69889e41becc0e236'
+    vm_image_md5: 'a39040f82ea9241f8ab3105c7b5ee275'
     resource_requirements:
       cpu:
         vcpus: 2
