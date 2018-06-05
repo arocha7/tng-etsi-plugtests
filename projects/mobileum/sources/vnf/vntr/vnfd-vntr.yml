@@ -7,7 +7,7 @@
 descriptor_version: "vnfd-schema-01"
 vendor: "mobileum"
 name: "vnf-vntr"
-version: "0.1"
+version: "0.3"
 author: "Alberto Rocha, Altice Labs, alberto-m-rocha@alticelabs.com"
 description: "A vNTR VNF (composed of 4 VDU's)"
 ##
@@ -18,7 +18,7 @@ virtual_deployment_units:
   - id: "vdu01"
     vm_image: "http://172.22.1.1/NFVPLU3/VNFs/Mobileum/mobileum_app.qcow2"
     vm_image_format: "qcow2"
-    vm_image_md5: '84e717a59f1d08fda4b57cc16d087259'
+    vm_image_md5: "a2e4dd33b6185b1199c7a31db7f9823a"
     resource_requirements:
       cpu:
         vcpus: 2
@@ -26,7 +26,7 @@ virtual_deployment_units:
         size: 2
         size_unit: "GB"
       storage:
-        size: 20
+        size: 40
         size_unit: "GB"
     connection_points:
       - id: "cp-in"
@@ -37,7 +37,7 @@ virtual_deployment_units:
   - id: "vdu02"
     vm_image: "http://172.22.1.1/NFVPLU3/VNFs/Mobileum/mobileum_sstp.qcow2"
     vm_image_format: "qcow2"
-    vm_image_md5: 'a875f16b663f7f542f5a73f78fc7594d'
+    vm_image_md5: "6e89018fdd5e40e8eb10e436bcfaa6c3"
     resource_requirements:
       cpu:
         vcpus: 2
@@ -56,7 +56,7 @@ virtual_deployment_units:
   - id: "vdu03"
     vm_image: "http://172.22.1.1/NFVPLU3/VNFs/Mobileum/mobileum_aero.qcow2"
     vm_image_format: "qcow2"
-    vm_image_md5: '19e5245cb898ec332e046e381e90343f'
+    vm_image_md5: "805f6668759fad0a72ccc4ce3b141ead"
     resource_requirements:
       cpu:
         vcpus: 2
@@ -75,7 +75,7 @@ virtual_deployment_units:
   - id: "vdu04"
     vm_image: "http://172.22.1.1/NFVPLU3/VNFs/Mobileum/mobileum_db2.qcow2"
     vm_image_format: "qcow2"
-    vm_image_md5: '7c65b9188b67c3cf657d9d80b4859efb'
+    vm_image_md5: "feaa603c73c80abb07de0a1db7592df7"
     resource_requirements:
       cpu:
         vcpus: 2

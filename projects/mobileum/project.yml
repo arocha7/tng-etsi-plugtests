@@ -4,5 +4,5 @@ package:
   maintainer: 'Alberto Rocha, Altice Labs, alberto-m-rocha@alticelabs.com'
   name: 'vntr'
   vendor: 'mobileum'
-  version: '0.1'
+  version: '0.3'
 version: '0.5'

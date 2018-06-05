@@ -7,7 +7,7 @@
 descriptor_version: "vnfd-schema-01"
 vendor: "mobileum"
 name: "vnf-sim"
-version: "0.1"
+version: "0.3"
 author: "Alberto Rocha, Altice Labs, alberto-m-rocha@alticelabs.com"
 description: "A Mobileum virtual NTR SIMULATOR VNF"
 
@@ -18,7 +18,7 @@ virtual_deployment_units:
   - id: "vdu01"
     vm_image: "http://172.22.1.1/NFVPLU3/VNFs/Mobileum/mobileum_sim.qcow2"
     vm_image_format: "qcow2"
-    vm_image_md5: 'b9753432b4370484c3d69754dae39912'
+    vm_image_md5: '741579355c61e176646f889fbb611c96'
     resource_requirements:
       cpu:
         vcpus: 2
