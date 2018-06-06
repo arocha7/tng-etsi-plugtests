@@ -7,7 +7,7 @@
 descriptor_version: "vnfd-schema-01"
 vendor: "anritsu-spirent"
 name: "vnf-pro"
-version: "0.1"
+version: "0.3"
 author: "alberto-m-rocha@alticelabs.com"
 description: "A Prot VNF"
 ##
@@ -28,13 +28,10 @@ virtual_deployment_units:
         size: 20
         size_unit: "GB"
     connection_points:
-      - id: "cp01"
+      - id: "cp-mgmt"
         interface: "ipv4"
         type: "internal"
-      - id: "cp02"
-        interface: "ipv4"
-        type: "internal"
-      - id: "cp03"
+      - id: "cp-input"
         interface: "ipv4"
         type: "internal"
 
@@ -46,20 +43,15 @@ virtual_links:
   - id: "vl-mgmt"
     connectivity_type: "E-LAN"
     connection_points_reference:
-      - "vdu01:cp01"
+      - "vdu01:cp-mgmt"
       - "cp-mgmt"
 
   - id: "vl-input"
     connectivity_type: "E-Line"
     connection_points_reference:
-      - "vdu01:cp02"
+      - "vdu01:cp-input"
       - "cp-input"
 
-  - id: "vl-output"
-    connectivity_type: "E-Line"
-    connection_points_reference:
-      - "vdu01:cp03"
-      - "cp-output"
 
 ##
 ## The VNF connection points to the 
@@ -70,8 +62,5 @@ connection_points:
     interface: "ipv4"
     type: "management"
   - id: "cp-input"
-    interface: "ipv4"
-    type: "internal"
-  - id: "cp-output"
     interface: "ipv4"
     type: "internal"

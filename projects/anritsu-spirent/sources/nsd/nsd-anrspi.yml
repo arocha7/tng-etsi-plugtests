@@ -7,9 +7,9 @@ descriptor_version: "1.0"
 
 vendor: "anritsu-spirent"
 name: "anrspi-nsd"
-version: "0.1"
+version: "0.3"
 author: "alberto-m-rocha@alticelabs.com"
-description: "A NSD joining Anritsu and Spirent VNFs"
+description: "A joined Anritsu and Spirent NS"
 
 ##
 ## The various network functions this service
@@ -19,15 +19,15 @@ network_functions:
   - vnf_id: "spi_vnf"
     vnf_vendor: "anritsu-spirent"
     vnf_name: "vnf-spi"
-    vnf_version: "0.1"
+    vnf_version: "0.3"
   - vnf_id: "sim_vnf"
     vnf_vendor: "anritsu-spirent"
     vnf_name: "vnf-sim"
-    vnf_version: "0.1"
+    vnf_version: "0.3"
   - vnf_id: "pro_vnf"
     vnf_vendor: "anritsu-spirent"
     vnf_name: "vnf-pro"
-    vnf_version: "0.1"
+    vnf_version: "0.3"
 
 ##
 ## The NS connection points to the 
@@ -56,18 +56,14 @@ virtual_links:
       - "spi_vnf:cp-mgmt"
       - "sim_vnf:cp-mgmt"
       - "pro_vnf:cp-mgmt"
-
   - id: "vl-input"
     connectivity_type: "E-Line"
     connection_points_reference:
-#      - "cp-input"
-      - "spi_vnf:cp-output"
-      - "sim_vnf:cp-input"
-
+      - "spi_vnf:cp-input"
+      - "sim_vnf:cp-output"
   - id: "vl-output"
     connectivity_type: "E-Line"
     connection_points_reference:
-#      - "cp-output"
       - "sim_vnf:cp-output"
       - "pro_vnf:cp-input"
 
