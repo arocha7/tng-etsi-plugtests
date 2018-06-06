@@ -1,0 +1,94 @@
+##
+## This is a anrspi network service descriptor
+## that comprises only the anrspi VNF
+## TODO: replace/modify this anrspi to a more comprehensive example
+
+descriptor_version: "1.0"
+
+vendor: "anritsu-spirent"
+name: "anrspi-nsd"
+version: "0.1"
+author: "alberto-m-rocha@alticelabs.com"
+description: "A NSD joining Anritsu and Spirent VNFs"
+
+##
+## The various network functions this service
+## is composed of.
+##
+network_functions:
+  - vnf_id: "spi_vnf"
+    vnf_vendor: "anritsu-spirent"
+    vnf_name: "vnf-spi"
+    vnf_version: "0.1"
+  - vnf_id: "sim_vnf"
+    vnf_vendor: "anritsu-spirent"
+    vnf_name: "vnf-sim"
+    vnf_version: "0.1"
+  - vnf_id: "pro_vnf"
+    vnf_vendor: "anritsu-spirent"
+    vnf_name: "vnf-pro"
+    vnf_version: "0.1"
+
+##
+## The NS connection points to the 
+## outside world.
+##
+connection_points:
+  - id: "cp-mgmt"
+    interface: "ipv4"
+    type: "management"
+#  - id: "cp-input"
+#    interface: "ipv4"
+#    type: "external"
+#  - id: "cp-output"
+#    interface: "ipv4"
+#    type: "external"
+
+##
+## The virtual links that interconnect
+## the different connections points.
+##
+virtual_links:
+  - id: "vl-mgmt"
+    connectivity_type: "E-LAN"
+    connection_points_reference:
+      - "cp-mgmt"
+      - "spi_vnf:cp-mgmt"
+      - "sim_vnf:cp-mgmt"
+      - "pro_vnf:cp-mgmt"
+
+  - id: "vl-input"
+    connectivity_type: "E-Line"
+    connection_points_reference:
+#      - "cp-input"
+      - "spi_vnf:cp-output"
+      - "sim_vnf:cp-input"
+
+  - id: "vl-output"
+    connectivity_type: "E-Line"
+    connection_points_reference:
+#      - "cp-output"
+      - "sim_vnf:cp-output"
+      - "pro_vnf:cp-input"
+
+##
+## The forwarding graphs.
+##
+#forwarding_graphs:
+#  - fg_id: "ns:fg01"
+#    number_of_endpoints: 2
+#    number_of_virtual_links: 4
+#    constituent_vnfs:
+#      - "vnf_anrspi"
+#    network_forwarding_paths:
+#      - fp_id: "ns:fg01:fp01"
+#        policy: "none"
+#        connection_points:
+#          - connection_point_ref: "input"
+#            position: 1
+#          - connection_point_ref: "anrspi_vnf:input"
+#            position: 2
+#          - connection_point_ref: "anrspi_vnf:output"
+#            position: 3
+#          - connection_point_ref: "output"
+#            position: 4
