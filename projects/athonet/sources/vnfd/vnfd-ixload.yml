@@ -32,49 +32,61 @@ virtual_deployment_units:
       - name: "vm_net_tx_MB"
         unit: "MB"
     connection_points:
-      - id: "mgmt"
+      - id: "cp_mgmt"
         interface: "ipv4"
         type: "internal"
-      - id: "input"
+      - id: "cp_s1"
         interface: "ipv4"
         type: "internal"
-      - id: "output"
+      - id: "cp_s1u"
+        interface: "ipv4"
+        type: "internal"
+      - id: "cp_sgi"
         interface: "ipv4"
         type: "internal"
         
         
 # VNF connection points to the outside world
 connection_points:
-  - id: "mgmt"
+  - id: "cp_mgmt"
     interface: "ipv4"
     type: "management"
-  - id: "input"
+  - id: "cp_s1"
     interface: "ipv4"
     type: "external"
-  - id: "output"
+  - id: "cp_s1u"
+    interface: "ipv4"
+    type: "external"
+  - id: "cp_sgi"
     interface: "ipv4"
     type: "external"
     
 
 # Virtual Links connecting the VDUs' connection points with each other and with the VNF's connection points
 virtual_links:
-  - id: "mgmt"
+  - id: "vl_mgmt"
     connectivity_type: "E-LAN"
     connection_points_reference:
-      - "vdu01:mgmt"
-      - "mgmt"
+      - "vdu01:cp_mgmt"
+      - "cp_mgmt"
     dhcp: True
-  - id: "input"
+  - id: "vl_s1"
     connectivity_type: "E-Line"
     connection_points_reference:
-      - "vdu01:input"
-      - "input"
+      - "vdu01:cp_s1"
+      - "cp_s1"
     dhcp: True
-  - id: "output"
+  - id: "vl_s1u"
     connectivity_type: "E-Line"
     connection_points_reference:
-      - "vdu01:output"
-      - "output"
+      - "vdu01:cp_s1u"
+      - "cp_s1u"
+    dhcp: True
+  - id: "vl_sgi"
+    connectivity_type: "E-Line"
+    connection_points_reference:
+      - "vdu01:cp_sgi"
+      - "cp_sgi"
     dhcp: True
 
 ##
