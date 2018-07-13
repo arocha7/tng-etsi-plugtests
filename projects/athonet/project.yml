@@ -3,7 +3,15 @@ files:
 - type: application/vnd.5gtango.vnfd
   tags:
   - eu.5gtango
-  path: sources/vnfd/vnfd-vepc.yml
+  path: sources/vnfd/vnfd-ixload.yml
+- type: application/vnd.5gtango.vnfd
+  tags:
+  - eu.5gtango
+  path: sources/vnfd/vnfd-vepc1.yml
+- type: application/vnd.5gtango.vnfd
+  tags:
+  - eu.5gtango
+  path: sources/vnfd/vnfd-vepc2.yml
 - type: application/vnd.5gtango.nsd
   tags:
   - eu.5gtango
