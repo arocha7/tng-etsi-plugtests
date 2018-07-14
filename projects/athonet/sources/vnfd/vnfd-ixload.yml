@@ -11,8 +11,10 @@ description: "A vIXload (traffic generator) VNF descriptor"
 # virtual deployment units inside the VNF
 virtual_deployment_units:
   - id: "vdu01"
-    vm_image: "ixload_docker"
-    vm_image_format: "docker"
+    vm_image: "http://files.sonata-nfv.eu/etsi-plugtests/u16haproxy-1.8.12.qcow2"
+    vm_image_format: "qcow2"
+    vm_image_md5: "316605ef953b492c41094324d93e4237"
+
     resource_requirements:
       cpu:
         vcpus: 1
@@ -115,8 +117,8 @@ monitoring_rules:
 ## Function Specific Managers
 ##
 function_specific_managers:
-  - id: "sonfsmvdmzserviceixload-vnfixload-config1"
-    description: "FSM for the configuration of the ixload"
+  - id: "sonfsmvdmzserviceixload-vnfcwixloadixload-config1"
+    description: "FSM for the configuration of the ixLoad"
     image: "sonatanfv/tng-ixload-fsm-css"
     options:
       - key: "type"
@@ -125,4 +127,7 @@ function_specific_managers:
         value: "start"
       - key: "type"
         value: "stop"
+
+#    vm_image: "ixload_docker"
+#    vm_image_format: "docker"
 
