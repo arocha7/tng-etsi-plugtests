@@ -3,7 +3,7 @@ descriptor_schema: "https://raw.githubusercontent.com/sonata-nfv/tng-schema/mast
 
 vendor: "eu.5gtango"
 name: "ixload-vnf"
-version: "0.1"
+version: "0.2"
 author: "tango"
 description: "A vIXload (traffic generator) VNF descriptor"
 
@@ -34,61 +34,61 @@ virtual_deployment_units:
       - name: "vm_net_tx_MB"
         unit: "MB"
     connection_points:
-      - id: "cp_mgmt"
+      - id: "mgmt"
         interface: "ipv4"
         type: "internal"
-      - id: "cp_s1"
+      - id: "cp1"
         interface: "ipv4"
         type: "internal"
-      - id: "cp_s1u"
+      - id: "cp2"
         interface: "ipv4"
         type: "internal"
-      - id: "cp_sgi"
+      - id: "cp3"
         interface: "ipv4"
         type: "internal"
         
         
 # VNF connection points to the outside world
 connection_points:
-  - id: "cp_mgmt"
+  - id: "mgmt"
     interface: "ipv4"
     type: "management"
-  - id: "cp_s1"
+  - id: "cp1"
     interface: "ipv4"
     type: "external"
-  - id: "cp_s1u"
+  - id: "cp2"
     interface: "ipv4"
     type: "external"
-  - id: "cp_sgi"
+  - id: "cp3"
     interface: "ipv4"
     type: "external"
     
 
 # Virtual Links connecting the VDUs' connection points with each other and with the VNF's connection points
 virtual_links:
-  - id: "vl_mgmt"
+  - id: "vlmgmt"
     connectivity_type: "E-LAN"
     connection_points_reference:
-      - "vdu01:cp_mgmt"
-      - "cp_mgmt"
+      - "vdu01:mgmt"
+      - "mgmt"
     dhcp: True
-  - id: "vl_s1"
+  - id: "vls1"
     connectivity_type: "E-Line"
     connection_points_reference:
-      - "vdu01:cp_s1"
-      - "cp_s1"
+      - "vdu01:cp1"
+      - "cp1"
     dhcp: True
-  - id: "vl_s1u"
+  - id: "vls1u"
     connectivity_type: "E-Line"
     connection_points_reference:
-      - "vdu01:cp_s1u"
-      - "cp_s1u"
+      - "vdu01:cp2"
+      - "cp2"
     dhcp: True
-  - id: "vl_sgi"
+  - id: "vlsgi"
     connectivity_type: "E-Line"
     connection_points_reference:
-      - "vdu01:cp_sgi"
-      - "cp_sgi"
+      - "vdu01:cp3"
+      - "cp3"
     dhcp: True
 
 ##

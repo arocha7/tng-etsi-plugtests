@@ -3,7 +3,7 @@ descriptor_schema: "https://raw.githubusercontent.com/sonata-nfv/tng-schema/mast
 
 vendor: "eu.5gtango"
 name: "vepc1-vnf"
-version: "0.1"
+version: "0.2"
 author: "tango"
 description: "A vEPC (EMM + HSS components) VNF descriptor"
 
@@ -33,49 +33,49 @@ virtual_deployment_units:
       - name: "vm_net_tx_MB"
         unit: "MB"
     connection_points:
-      - id: "cp_mgmt"
+      - id: "mgmt"
         interface: "ipv4"
         type: "internal"
-      - id: "cp_s1"
+      - id: "cp1"
         interface: "ipv4"
         type: "internal"
-      - id: "cp_s11"
+      - id: "cp2"
         interface: "ipv4"
         type: "internal"
         
         
 # VNF connection points to the outside world
 connection_points:
-  - id: "cp_mgmt"
+  - id: "mgmt"
     interface: "ipv4"
     type: "management"
-  - id: "cp_s1"
+  - id: "cp1"
     interface: "ipv4"
     type: "external"
-  - id: "cp_s11"
+  - id: "cp2"
     interface: "ipv4"
     type: "external"
     
 
 # Virtual Links connecting the VDUs' connection points with each other and with the VNF's connection points
 virtual_links:
-  - id: "vl_mgmt"
+  - id: "vlmgmt"
     connectivity_type: "E-LAN"
     connection_points_reference:
-      - "vdu01:cp_mgmt"
-      - "cp_mgmt"
+      - "vdu01:mgmt"
+      - "mgmt"
     dhcp: True
-  - id: "vl_s1"
+  - id: "vls1"
     connectivity_type: "E-Line"
     connection_points_reference:
-      - "vdu01:cp_s1"
-      - "cp_s1"
+      - "vdu01:cp1"
+      - "cp1"
     dhcp: True
-  - id: "vl_s11"
+  - id: "vls11"
     connectivity_type: "E-Line"
     connection_points_reference:
-      - "vdu01:cp_s11"
-      - "cp_s11"
+      - "vdu01:cp2"
+      - "cp2"
     dhcp: True
 
 ##

@@ -21,5 +21,5 @@ package:
   name: 5gtango-project-vepc
   vendor: eu.5gtango
   description: 'Athonet vEPC is a 4G mobile core that implements broad mobile network functionality including MME, PGW, SGW, PCRF and HSS'
-  version: '0.1'
+  version: '0.2'
 version: '0.5'
