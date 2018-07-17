@@ -11,7 +11,7 @@ description: "A vEPC (EMM + HSS components) VNF descriptor"
 # virtual deployment units inside the VNF
 virtual_deployment_units:
   - id: "vdu01"
-    vm_image: "http://files.sonata-nfv.eu/etsi-plugtests/vEPC-NFV-Base-20180.32-1.qcow2"
+    vm_image: "http://files.sonata-nfv.eu/etsi-plugtests/vEPC-NFV-Base-20180522-1.qcow2"
     vm_image_format: "qcow2"
     vm_image_md5: "49eb75aa3fe5562829bd90498f384623"
     resource_requirements:
