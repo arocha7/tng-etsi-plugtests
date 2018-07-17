@@ -3,7 +3,7 @@ descriptor_schema: "https://raw.githubusercontent.com/sonata-nfv/tng-schema/mast
 
 vendor: "eu.5gtango"
 name: "ixload-vnf"
-version: "0.2"
+version: "0.3"
 author: "tango"
 description: "A vIXload (traffic generator) VNF descriptor"
 
@@ -116,17 +116,17 @@ monitoring_rules:
 ##
 ## Function Specific Managers
 ##
-function_specific_managers:
-  - id: "sonfsmvdmzserviceixload-vnfcwixloadixload-config1"
-    description: "FSM for the configuration of the ixLoad"
-    image: "sonatanfv/tng-ixload-fsm-css"
-    options:
-      - key: "type"
-        value: "configure"
-      - key: "type"
-        value: "start"
-      - key: "type"
-        value: "stop"
+#function_specific_managers:
+#  - id: "sonfsmvdmzserviceixload-vnfcwixloadixload-config1"
+#    description: "FSM for the configuration of the ixLoad"
+#    image: "sonatanfv/tng-ixload-fsm-css"
+#    options:
+#      - key: "type"
+#        value: "configure"
+#      - key: "type"
+#        value: "start"
+#      - key: "type"
+#        value: "stop"
 
 #    vm_image: "ixload_docker"
 #    vm_image_format: "docker"
